@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tarjeta"
+        android:layout_width="195dp"
+        android:layout_height="235dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivPortada"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/revista" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="249dp"
+        android:layout_marginEnd="9dp"
+        android:text="Libro 1"
+        android:textAlignment="viewStart"
+        android:textColor="#2E2E2E"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

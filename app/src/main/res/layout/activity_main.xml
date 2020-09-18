@@ -7,44 +7,108 @@
     android:background="@color/colorBlanco"
     tools:context=".MainActivity">
 
+
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"></include>
-
-    <RelativeLayout
-        android:id="@+id/fragments"
-        android:name="com.foodi.frgInicio"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        android:layout_marginTop="55dp">
 
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:text="Bienvenido"
-            android:textColor="#2C2C2C"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rclRevistas"
+        <RelativeLayout
+            android:id="@+id/fragments"
+            android:name="com.foodi.frgInicio"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_below="@+id/textView2"
-            android:layout_marginTop="10dp" />
+            android:layout_height="match_parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Bienvenido"
+                android:textColor="#2C2C2C"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rclRevistas"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/txtDesc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivDesc2"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="100dp"
+                android:background="@drawable/lyt_redondo"
+                android:text="Descripción"
+                android:textAlignment="center"
+                android:textColor="@color/colorStatus"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivDesc2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/rclRevistas"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/descripcion" />
+
+            <com.e.revistasuteq.Clases.JustifyTextView
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/txtDesc2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="1dp"
+                android:textColor="#4C4C4C"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/ivDesc"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/txtDesc2"
+                android:layout_marginTop="40dp"
+                app:srcCompat="@drawable/descripcion" />
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivDesc"
+                android:layout_marginStart="125dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="125dp"
+                android:text="Seleccione una revista para ver su descripción"
+                android:textAlignment="center"
+                android:textColor="#919191" />
+
+
+        </RelativeLayout>
 
 
 
-    </RelativeLayout>
-
+    </ScrollView>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="101dp"
