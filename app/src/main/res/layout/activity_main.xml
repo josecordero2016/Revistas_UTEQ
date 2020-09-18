@@ -30,7 +30,7 @@
 
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txtLibroSelec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -41,21 +41,37 @@
                 android:textSize="22dp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/txtSeleccionado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivDesc2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Bienvenido"
+                android:textAlignment="center"
+                android:textColor="@color/colorStatus"
+                android:textColorHighlight="#FFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rclRevistas"
+                android:id="@+id/rclEdiciones"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_below="@+id/textView2"
+                android:layout_below="@+id/txtLibroSelec"
                 android:layout_marginTop="5dp" />
 
             <TextView
                 android:id="@+id/txtDesc2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ivDesc2"
-                android:layout_marginStart="100dp"
+                android:layout_below="@+id/txtSeleccionado"
+                android:layout_marginStart="130dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="130dp"
                 android:background="@drawable/lyt_redondo"
                 android:text="Descripción"
                 android:textAlignment="center"
@@ -67,7 +83,7 @@
                 android:id="@+id/ivDesc2"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/rclRevistas"
+                android:layout_below="@+id/rclEdiciones"
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/descripcion" />
 
@@ -75,10 +91,10 @@
                 android:id="@+id/txtDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/txtDesc2"
+                android:layout_below="@+id/btnAbrir"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="36dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="1dp"
                 android:textColor="#4C4C4C"
                 android:textSize="14dp" />
@@ -102,6 +118,20 @@
                 android:text="Seleccione una revista para ver su descripción"
                 android:textAlignment="center"
                 android:textColor="#919191" />
+
+            <Button
+                android:id="@+id/btnAbrir"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_below="@+id/txtDesc2"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="130dp"
+                android:background="@drawable/lyt_redondo"
+                android:backgroundTint="@color/colorStatus"
+                android:onClick="abrirEdiciones"
+                android:text="EDICIONES"
+                android:textColor="#FFFFFF" />
 
 
         </RelativeLayout>

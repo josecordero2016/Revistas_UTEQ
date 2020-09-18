@@ -5,8 +5,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,11 +27,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.e.revistasuteq.Clases.Utilitarios.ID_REVISTA;
+import static com.e.revistasuteq.Clases.Utilitarios.LIBRO_SELECCIONADO;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rclRevistas;
-    TextView txtDesc, txtDesc2, txtDescripcion;
+    TextView txtDesc, txtDesc2, txtDescripcion, txtSeleccionado;
     ImageView ivDesc, ivDesc2;
+    Button btnAbrir;
 
     private static OkHttpClient.Builder httpClientBuilder = null;
 
@@ -46,18 +52,19 @@ public class MainActivity extends AppCompatActivity {
         txtDesc = findViewById(R.id.txtDesc);
         txtDesc2 = findViewById(R.id.txtDesc2);
         txtDescripcion = findViewById(R.id.txtDescripcion);
+        txtSeleccionado = findViewById(R.id.txtSeleccionado);
         ivDesc = findViewById(R.id.ivDesc);
         ivDesc2 = findViewById(R.id.ivDesc2);
+        btnAbrir = findViewById(R.id.btnAbrir);
         txtDesc2.setVisibility(View.GONE);
+        txtSeleccionado.setVisibility(View.GONE);
         ivDesc2.setVisibility(View.GONE);
+        btnAbrir.setVisibility(View.GONE);
 
-
-        rclRevistas = (RecyclerView) findViewById(R.id.rclRevistas);
+        rclRevistas = (RecyclerView) findViewById(R.id.rclEdiciones);
         LinearLayoutManager linear = new LinearLayoutManager(getApplicationContext());
         linear.setOrientation(LinearLayoutManager.HORIZONTAL);
         rclRevistas.setLayoutManager(linear);
-
-
 
         Retrofit rf = new Retrofit.Builder()
                 .baseUrl("https://revistas.uteq.edu.ec/")
@@ -82,9 +89,15 @@ public class MainActivity extends AppCompatActivity {
                         txtDesc2.setVisibility(View.VISIBLE);
                         ivDesc2.setVisibility(View.VISIBLE);
                         txtDescripcion.setVisibility(View.VISIBLE);
+                        txtSeleccionado.setVisibility(View.VISIBLE);
+                        btnAbrir.setVisibility(View.VISIBLE);
 
                         String descripcion = lista.get(posicion).getDescription().replaceAll("\\<.*?\\>", "");
                         txtDescripcion.setText(descripcion);
+
+                        ID_REVISTA = lista.get(posicion).getJournal_id();
+                        LIBRO_SELECCIONADO = lista.get(posicion).getName();
+                        txtSeleccionado.setText(LIBRO_SELECCIONADO);
                         txtDesc.setVisibility(View.GONE);
                         ivDesc.setVisibility(View.GONE);
 
@@ -98,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void abrirEdiciones(View view){
+        Intent intent = new Intent(this, actEdiciones.class);
+        startActivity(intent);
     }
 
 

@@ -12,18 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.revistasuteq.Certificaciones.GlideApp;
-import com.e.revistasuteq.Modelos.Revista;
+import com.e.revistasuteq.Modelos.Edicion;
 import com.e.revistasuteq.R;
 
 import java.util.List;
 
-public class adtRevistas extends RecyclerView.Adapter<adtRevistas.ViewHolder> implements View.OnClickListener{
+public class adtEdiciones extends RecyclerView.Adapter<adtEdiciones.ViewHolder> implements View.OnClickListener{
 
     private View.OnClickListener listener;
-    private List<Revista> datos;
+    private List<Edicion> datos;
     Context context;
 
-    public adtRevistas(List<Revista> datos, Context context){
+    public adtEdiciones(List<Edicion> datos, Context context){
         this.datos =datos;
         this.context = context;
     }
@@ -43,9 +43,9 @@ public class adtRevistas extends RecyclerView.Adapter<adtRevistas.ViewHolder> im
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view=null;
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lyt_tarjetas, null, false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lyt_tarjetas_ediciones, null, false);
         view.setOnClickListener(this);
-        return new adtRevistas.ViewHolder(view);
+        return new adtEdiciones.ViewHolder(view);
     }
 
     @Override
@@ -65,18 +65,22 @@ public class adtRevistas extends RecyclerView.Adapter<adtRevistas.ViewHolder> im
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtTitulo;
-        ImageView ivPortada;
+        TextView txtTitulo, txtEdicion, txtFecha;
+        ImageView ivPortadaEd;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTitulo = (TextView) itemView.findViewById(R.id.txtTituloEd);
-            ivPortada = (ImageView) itemView.findViewById(R.id.ivPortadaEd);
+            txtEdicion = (TextView) itemView.findViewById(R.id.txtEdicionEd);
+            txtFecha = (TextView) itemView.findViewById(R.id.txtFechaEd);
+            ivPortadaEd = (ImageView) itemView.findViewById(R.id.ivPortadaEd);
         }
 
-        public void asignar_datos(Revista valor) {
-            txtTitulo.setText(valor.getName());
-            GlideApp.with(itemView).load(valor.getPortada()).fitCenter().into(ivPortada);
+        public void asignar_datos(Edicion valor) {
+            txtTitulo.setText(valor.getTitle());
+            txtEdicion.setText("Edición #"+valor.getVolume());
+            txtFecha.setText(valor.getDate_published().substring(0,10));
+            GlideApp.with(itemView).load(valor.getCover()).fitCenter().into(ivPortadaEd);
         }
     }
 

@@ -5,10 +5,39 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <TextView
+        android:id="@+id/txtFechaEd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtEdicionEd"
+        android:layout_alignStart="@+id/txtTituloEd"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="9dp"
+        android:text="2020-09-12"
+        android:textAlignment="textStart"
+        android:textColor="#515151"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/txtEdicionEd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTituloEd"
+        android:layout_alignStart="@+id/txtTituloEd"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="9dp"
+        android:text="Edición #4"
+        android:textAlignment="textStart"
+        android:textColor="#515151"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/tarjeta"
-        android:layout_width="195dp"
-        android:layout_height="235dp"
+        android:layout_width="157dp"
+        android:layout_height="203dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="9dp"
@@ -36,15 +65,16 @@
 
     <TextView
         android:id="@+id/txtTituloEd"
-        android:layout_width="190dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tarjeta"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="249dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="9dp"
         android:text="Libro 1"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="#2E2E2E"
-        android:textSize="16dp"
+        android:textSize="14dp"
         android:textStyle="bold" />
 
 </RelativeLayout>
