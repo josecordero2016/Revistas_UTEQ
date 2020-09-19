@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".actCategorias">
+        <activity android:name=".actNavegador">
 
         </activity>
+        <activity android:name=".actCategorias"></activity>
         <activity android:name=".actEdiciones" />
         <activity android:name=".MainActivity">
             <intent-filter>

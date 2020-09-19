@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.e.revistasuteq.Clases.Utilitarios.EDICION_SELECCIONADA;
+import static com.e.revistasuteq.Clases.Utilitarios.URL_HTML;
+import static com.e.revistasuteq.Clases.Utilitarios.URL_PDF;
 import static com.e.revistasuteq.Clases.Utilitarios.ID_REVISTA;
 
 public class actCategorias extends AppCompatActivity {
@@ -92,6 +95,23 @@ public class actCategorias extends AppCompatActivity {
                                     List<Articulo> lista = response.body();
                                     adtArticulo adtArticulo = new adtArticulo(lista, getApplicationContext());
                                     rclArticulos.setAdapter(adtArticulo);
+                                    adtArticulo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            int posicion=rclArticulos.getChildAdapterPosition(view);
+                                            try{
+                                                URL_PDF = lista.get(posicion).getGaleys()[0].getUrlViewGalley();
+                                                URL_HTML = lista.get(posicion).getGaleys()[1].getUrlViewGalley();
+                                                }catch (Exception e){
+                                            }
+                                            Intent intent = new Intent(act.getApplicationContext(), actNavegador.class);
+                                            startActivity(intent);
+                                        }
+                                    });
+
+
+
+
                                 }
 
                                 @Override
@@ -120,6 +140,7 @@ public class actCategorias extends AppCompatActivity {
             CargarTodo();
             intento++;
         }
+        Toast.makeText(getApplicationContext(),"Seleccione una categoría",Toast.LENGTH_LONG).show();
     }
 
     public void CargarTodo(){
@@ -143,6 +164,19 @@ public class actCategorias extends AppCompatActivity {
                 List<Articulo> lista = response.body();
                 adtArticulo adtArticulo = new adtArticulo(lista, getApplicationContext());
                 rclArticulos.setAdapter(adtArticulo);
+                adtArticulo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int posicion=rclArticulos.getChildAdapterPosition(view);
+                        try{
+                            URL_PDF = lista.get(posicion).getGaleys()[0].getUrlViewGalley();
+                            URL_HTML = lista.get(posicion).getGaleys()[1].getUrlViewGalley();
+                            }catch (Exception e){
+                        }
+                        Intent intent = new Intent(act.getApplicationContext(), actNavegador.class);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

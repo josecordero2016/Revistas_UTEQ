@@ -68,10 +68,10 @@
                 android:id="@+id/txtDesc2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtSeleccionado"
-                android:layout_marginStart="130dp"
+                android:layout_below="@+id/btnAbrir"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="130dp"
+                android:layout_marginEnd="150dp"
                 android:background="@drawable/lyt_redondo"
                 android:text="Descripción"
                 android:textAlignment="center"
@@ -91,7 +91,7 @@
                 android:id="@+id/txtDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/btnAbrir"
+                android:layout_below="@+id/txtDesc2"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="36dp"
                 android:layout_marginTop="10dp"
@@ -103,8 +103,8 @@
                 android:id="@+id/ivDesc"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@+id/txtDesc2"
-                android:layout_marginTop="40dp"
+                android:layout_below="@+id/rclArticulos"
+                android:layout_marginTop="213dp"
                 app:srcCompat="@drawable/descripcion" />
 
             <TextView
@@ -123,14 +123,14 @@
                 android:id="@+id/btnAbrir"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
-                android:layout_below="@+id/txtDesc2"
+                android:layout_below="@+id/txtSeleccionado"
                 android:layout_marginStart="130dp"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="130dp"
                 android:background="@drawable/lyt_redondo"
                 android:backgroundTint="@color/colorStatus"
                 android:onClick="abrirEdiciones"
-                android:text="EDICIONES"
+                android:text="VER EDICIONES"
                 android:textColor="#FFFFFF" />
 
 

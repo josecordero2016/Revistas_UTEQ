@@ -68,7 +68,7 @@ public class actEdiciones extends AppCompatActivity {
                         int posicion=rclEdiciones.getChildAdapterPosition(view);
                         try{
                         EDICION_SELECCIONADA = Integer.toString(lista.get(posicion).getIssue_id());
-                        Toast.makeText(act.getApplicationContext(),EDICION_SELECCIONADA, Toast.LENGTH_LONG).show();
+                       // Toast.makeText(act.getApplicationContext(),EDICION_SELECCIONADA, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(act.getApplicationContext(), actCategorias.class);
                         startActivity(intent);}catch (Exception e){
 
