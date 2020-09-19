@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         ivDesc2.setVisibility(View.GONE);
         btnAbrir.setVisibility(View.GONE);
 
-        rclRevistas = (RecyclerView) findViewById(R.id.rclEdiciones);
+        rclRevistas = (RecyclerView) findViewById(R.id.rclArticulos);
         LinearLayoutManager linear = new LinearLayoutManager(getApplicationContext());
         linear.setOrientation(LinearLayoutManager.HORIZONTAL);
         rclRevistas.setLayoutManager(linear);
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         txtDescripcion.setVisibility(View.VISIBLE);
                         txtSeleccionado.setVisibility(View.VISIBLE);
                         btnAbrir.setVisibility(View.VISIBLE);
+
 
                         String descripcion = lista.get(posicion).getDescription().replaceAll("\\<.*?\\>", "");
                         txtDescripcion.setText(descripcion);

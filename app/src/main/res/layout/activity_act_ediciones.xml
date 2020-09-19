@@ -41,7 +41,7 @@
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rclEdiciones"
+            android:id="@+id/rclArticulos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/txtLibroSelec"
